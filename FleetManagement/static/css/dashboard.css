@@ -1,0 +1,147 @@
+/*NEW FONTS */
+@font-face {
+    font-family: "amsterdam";
+    src: url("/static/fonts/amsterdam-four-ttf.ttf") format("truetype");
+}
+@font-face {
+    font-family: "gnyrwn971";
+    src: url("/static/fonts/gnyrwn971.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "SIMPLICA Typeface";
+    src: url("/static/fonts/SIMPLICA Typeface.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "NewsE";
+    src: url("/static/fonts/NewsE.ttf") format("truetype");
+}
+
+.page-header {
+    background-color: rgba(89, 131, 252, 1);
+    background-image: linear-gradient(182deg, rgba(89, 131, 252, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    /*height: 100vh;*/
+    font-family: "NewsE";
+    text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
+    font: bold;
+    -webkit-box-shadow: 8px 8px 25px 1px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 8px 8px 25px 1px rgba(0, 0, 0, 1);
+    box-shadow: 8px 8px 25px 1px rgba(0, 0, 0, 1);
+    margin-top: 0;
+    padding: 10px 10px 10px 15px;
+    display: flex; /* Dodane: Ustawienie kontenera na flex */
+    justify-content: space-between; /* Dodane: Rozłożenie elementów na końcach kontenera */
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active, .page-header h1 a:hover, .lead, .nav-item a, .nav-item a:visited, .nav-item a:active, .nav-item a:hover {
+    color: #ffffff;
+    font-size: 20pt;
+    text-decoration: none;
+    text-shadow: 4px 4px 6px rgb(3, 4, 23);
+    letter-spacing: 5px;
+
+}
+
+.nav.panel {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-item {
+    margin-left: 10px; /* Dodane: Margines między elementami listy */
+}
+
+.nav-item a {
+    color: #f6f6f6;
+    font-size: 15pt;
+    text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
+    text-decoration: none;
+}
+
+.nav-item a:hover {
+    color: #ffffff;
+}
+
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+
+}
+
+.element {
+    flex: 1; /* Dzieli dostępną przestrzeń między lewą a prawą sekcją */
+    margin: 0 0px; /* Duże marginesy po lewej i prawej stronie */
+    text-align: center; /* Tekst wyrównany do środka */
+}
+
+.left-section img, .right-section img {
+    width: 50%; /* Zdjęcie wypełnia połowę szerokości kontenera */
+    height: auto; /* Działa proporcjonalnie do szerokości */
+}
+
+.right-section p1, .left-section p1 {
+    /*text-align: center; !* Tekst wyrównany do środka *!*/
+    font-family: "amsterdam";
+    text-shadow: 4px 4px 6px rgb(0, 0, 0);
+    color: rgb(12, 0, 0);
+    font-size: 50pt;
+    text-decoration: none;
+}
+
+.right-section p2, .right-section p3, .left-section p2, .left-section p3 {
+    margin: 50px 20px; /* Duże marginesy góra/dół, 20px lewo/prawo */
+    text-align: left; /* Tekst wyrównany do lewej */
+    color: rgb(0, 0, 0);
+    font-size: 25pt;
+    font-family: "gnyrwn971";
+    text-decoration: none;
+}
+
+.center-section element {
+    text-align: center;
+}
+
+.contact-section {
+    background-color: rgba(89, 131, 252, 1);
+    background-image: linear-gradient(353deg, rgba(89, 131, 252, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    /*height: 25vh;*/
+    margin-top: 0;
+    padding: 10px 10px 10px 15px;
+    display: flex; /* Dodane: Ustawienie kontenera na flex */
+    justify-content: space-between; /* Dodane: Rozłożenie elementów na końcach kontenera */
+    color: #ffffff;
+    font-family: "NewsE";
+    font-size: 10pt;
+    text-decoration: none;
+    text-shadow: 4px 4px 6px rgb(5, 5, 14);
+    letter-spacing: 5px;
+}
+
+.footer-section {
+    background: var(--background-color);
+}
+
+.icon-social {
+    font-size: 2.6rem;
+    color: #ffffff;
+}
+
+.footer-text-color {
+    color: #ffffff;
+}
+
+/*Tło dla całej strony*/
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background-image: url('{% static "img/papier.jpg');
+    background-size: cover;
+}

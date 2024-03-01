@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="page-header">
+        <h1>Potwierdzenie usunięcia pojazdu</h1>
+    </div>
+
+    <p>Czy na pewno chcesz usunąć pojazd o nr. rejestracyjnym: <strong>{{ pojazd.nr_rejestracyjny }}</strong>?</p>
+
+    <form method="post" action="{% url 'usun_pojazd' pk=pojazd.pk %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Tak, usuń</button>
+        <a href="{% url 'lista_pojazdow' %}" class="btn btn-secondary">Anuluj</a>
+    </form>
+{% endblock %}

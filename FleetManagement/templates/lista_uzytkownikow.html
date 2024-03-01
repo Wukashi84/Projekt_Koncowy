@@ -1,0 +1,152 @@
+{% load static %}
+{% block content %}
+<div class="page-header">
+    <h1>Lista Użytkowników</h1>
+    <a href="{% url 'dodaj_uzytkownika' %}" class="btn btn-primary">Dodaj Użytkownika</a>
+    <a href="{% url 'dashboard' %}" class="btn btn-secondary">Powrót na stronę główną</a>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</div>
+
+<table class="lista-uzytkownikow" border="5" cellpadding="23">
+    <thead>
+        <tr>
+            <th>Lp.</th>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Stanowisko</th>
+            <th>Nr. Rejestracyjny Samochodu</th>
+            <th>MPK</th>
+            <th>Akcja</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for uzytkownik in uzytkownicy %}
+        <tr data-href="{% url 'szczegoly_uzytkownika' pk=uzytkownik.pk %}">
+            <td>{{ forloop.counter }}</td>
+            <td>{{ uzytkownik.imie }}</td>
+            <td>{{ uzytkownik.nazwisko }}</td>
+            <td>{{ uzytkownik.stanowisko }}</td>
+            <td>{{ uzytkownik.nr_rej_samochodu }}</td>
+            <td>{{ uzytkownik.mpk }}</td>
+            <td>
+                <form method="post" action="{% url 'usun_uzytkownika' pk=uzytkownik.pk }">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-sm">Usuń</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var rows = document.querySelectorAll("tr[data-href]");
+        rows.forEach(function (row) {
+            row.addEventListener("mouseover", function () {
+                this.style.cursor = "pointer";
+            });
+            row.addEventListener("mouseout", function () {
+                this.style.cursor = "default";
+            });
+            row.addEventListener("click", function () {
+                window.location.href = this.dataset.href;
+            });
+        });
+    });
+</script>
+
+<style>
+    .page-header {
+        background-color: rgb(255, 255, 255);
+        background-image: linear-gradient(353deg, rgba(89, 131, 252, 1) 0%, rgba(0, 0, 0, 1) 100%);
+        padding: 10px 10px 10px 15px;
+        display: flex;
+        justify-content: space-between;
+        color: #ffffff;
+        font-family: "NewsE";
+        font-size: 20pt;
+    }
+
+    .lista-uzytkownikow {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-family: "NewsE";
+        font-size: 16px;
+        text-align: center;
+        letter-spacing: 2px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .lista-uzytkownikow th,
+    .lista-uzytkownikow td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        font-family: "NewsE";
+        font-size: 16px;
+        text-align: center;
+        letter-spacing: 2px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .lista-uzytkownikow th {
+        background-color: rgba(82, 88, 104, 0.87);
+        color: #000000;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        letter-spacing: 2px;
+        border: 2px solid #dddddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .lista-uzytkownikow tr:nth-child(even) {
+        background-color: rgb(8, 155, 248);
+        color: #000000;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        letter-spacing: 2px;
+        border: 2px solid #dddddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .lista-uzytkownikow tr:nth-child(odd) {
+        background-color: rgba(245, 225, 242, 0.97);
+        color: #000000;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        letter-spacing: 2px;
+        border: 2px solid #dddddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .lista-uzytkownikow tr:hover {
+        background-color: rgba(255, 196, 0, 0.66);
+        color: #000000;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        letter-spacing: 2px;
+        border: 2px solid #dddddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+</style>
+
+{% endblock %}

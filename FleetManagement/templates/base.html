@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Tytuł Strony{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <!-- Dodaj więcej arkuszy stylów, jeśli są potrzebne -->
+</head>
+<body>
+
+<header>
+    <!-- Dodaj nagłówek strony, jeśli jest potrzebny -->
+    <h1>Moja Strona</h1>
+    <nav>
+        <ul>
+            <li><a href="#">Strona główna</a></li>
+            <li><a href="#">O nas</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+   {% block messages %}
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}}
+</main>
+
+<footer>
+    <p>&copy; 2024 Moja Strona. Wszelkie prawa zastrzeżone.</p>
+</footer>
+
+</body>
+</html>

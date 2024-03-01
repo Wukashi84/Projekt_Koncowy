@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            border: 2px solid #ccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        p {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>Karta pojazdu - nr. {{ pojazd.nr_rejestracyjny }}</h1>
+<h2>Dane pojazdu</h2>
+<p><strong>Marka:</strong> {{ pojazd.marka_pojazdu }}</p>
+<p><strong>Model:</strong> {{ pojazd.model_pojazdu }}</p>
+<p><strong>Nr. Rej.:</strong> {{ pojazd.nr_rejestracyjny }}</p>
+<p><strong>Rok wytworzenia:</strong> {{ pojazd.rok_wytworzenia }}</p>
+<p><strong>Moc (KM):</strong> {{ pojazd.moc }}</p>
+<p><strong>Poj. Silnika:</strong> {{ pojazd.poj_silnika }}</p>
+<p><strong>Paliwo:</strong> {{ pojazd.paliwo }}</p>
+
+{% if pojazd.uzytkownik %}
+<h2>Informacje o użytkowniku</h2>
+<p><strong>Imię:</strong> {{ pojazd.uzytkownik.imie }}</p>
+<p><strong>Nazwisko:</strong> {{ pojazd.uzytkownik.nazwisko }}</p>
+<p><strong>Stanowisko:</strong> {{ pojazd.uzytkownik.stanowisko }}</p>
+<p><strong>MPK:</strong> {{ pojazd.uzytkownik.mpk }}</p>
+{% else %}
+<p><em>POJAZD NIE MA PRZYPISANEGO UŻYTKOWNIKA</em></p>
+{% endif %}
+
+{% if pojazd.karta_paliwowa %}
+<h2>Informacje o karcie paliwowej</h2>
+<p><strong>Numer karty paliwowej:</strong> {{ pojazd.karta_paliwowa.nr_karty }}</p>
+<p><strong>Data ważności karty paliwowej:</strong> {{ pojazd.karta_paliwowa.data_ważności }}</p>
+<p><strong>Status karty paliwowej:</strong> {{ pojazd.karta_paliwowa.status }}</p>
+<p><strong>Kod PIN:</strong> {{ pojazd.karta_paliwowa.kod_pin }}</p>
+<p><strong>Limit karty paliwowej:</strong> {{ pojazd.karta_paliwowa.limit }}</p>
+{% else %}
+<p><em>Pojazd nie posiada karty paliwowej</em></p>
+{% endif %}
+</body>
+</html>

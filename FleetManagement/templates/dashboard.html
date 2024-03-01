@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fleet Management</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+<div class="page-header">
+    <div>
+        <h1><a href="/">Fleet Management</a></h1>
+    </div>
+    <ul class="nav panel">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="dashboard" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="lista_pojazdow">Pojazdy</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="lista_kart">Karty paliwowe</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="lista_uzytkownikow">Użytkownicy</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="admin">Panel Administracyjny</a>
+        </li>
+    </ul>
+</div>
+<div class="about-section col-7 ml-4">
+    <div class="left-section element">
+        <ul>
+            <p1>O aplikacji</p1>
+        </ul>
+        <ul>
+            <p2>Aplikacja Fleet Management to kompleksowe narzędzie stworzone z myślą o efektywnym zarządzaniu flotą
+                firmową.
+                Pozwala ona na łatwe dodawanie nowych pojazdów, śledzenie ich bieżącego stanu technicznego,
+                monitorowanie terminów przeglądów, ubezpieczeń oraz badań technicznych.
+                Dzięki tej aplikacji użytkownicy zyskują pełną kontrolę nad flotą pojazdów, co przekłada się na
+                zwiększenie efektywności operacyjnej,
+                minimalizację ryzyka awarii oraz optymalizację kosztów związanych z utrzymaniem floty. To idealne
+                narzędzie dla firm, które pragną usprawnić procesy zarządzania pojazdami oraz zapewnić ich niezawodność
+                i bezpieczeństwo..<br></p2>
+        </ul>
+    </div>
+</div>
+
+<div class="about-section p-5 my-5">
+    <div class="left-section element">
+        <!-- Tutaj umieść swoje zdjęcie -->
+        <img src="{% static 'img/JA.png' %}" alt="Moje zdjęcie ">
+    </div>
+    <div class="right-section element">
+        <ul>
+            <p1>Łukasz Słoma</p1>
+        </ul>
+        <ul>
+            <p2>Jestem absolwentem Politechniki Warszawskiej na wydziale Inżynierii Produkcji i Zarządzania.
+                Posiadam ponad 12-letnie doświadczenie zawodowe w firmie Energop, gdzie zajmuję się głównie zarządzaniem
+                flotą samochodową.
+                Moje obowiązki obejmują troskę o stan techniczny pojazdów, prowadzenie spraw związanych z
+                ubezpieczeniami oraz sporadyczne zaangażowanie w proces zakupu nowych pojazdów.<br></p2>
+            <p3>
+                Poza sferą zawodową, pasjonuję się filmami, a także rysowaniem.
+                Te zainteresowania stanowią ważny element mojego życia, pozwalając mi na rozwijanie kreatywności i
+                relaks po intensywnym dniu pracy.
+                Moja determinacja oraz zamiłowanie do różnorodnych dziedzin sprawiają, że stale poszukuję nowych wyzwań
+                zarówno w życiu zawodowym, jak i prywatnym.
+            </p3>
+        </ul>
+    </div>
+</div>
+
+
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <h3 class="mb-4">Skontaktuj się z nami</h3>
+                <p>Jeśli masz pytania dotyczące naszej aplikacji Fleet Management lub chcesz dowiedzieć się więcej o
+                    zarządzaniu flotą firmową, skontaktuj się z nami:</p>
+                <ul>
+                    <li>Email: lukasz.sloma84@gmail.com</li>
+                    <li>Kom.: 123 456 789</li>
+                    <li>Adres: ul. Warszawska 59/76, 96-500 Sochaczew</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h3 class="mb-4">Media Społecznościowe </h3>
+                <div class="d-flex justify-content-between align-items-center">
+                    <a href="https://www.facebook.com/fleetmanagement" class="text-dark">
+                        <i class="fab fa-facebook-square mr-2 icon-social"></i> Facebook
+                    </a>
+                    <a href="https://www.twitter.com/fleetmanagement" class="text-dark">
+                        <i class="fab fa-twitter-square mr-2 icon-social"></i> Twitter
+                    </a>
+                    <a href="https://www.instagram.com/fleetmanagement" class="text-dark">
+                        <i class="fab fa-instagram icon-social"></i> Instagram
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+     <p>&copy; 2024 Moja Strona. Wszelkie prawa zastrzeżone.</p>
+</section>
+
+</body>
+</html>

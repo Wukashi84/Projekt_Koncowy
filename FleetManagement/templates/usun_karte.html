@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="page-header">
+        <h1>Potwierdzenie usunięcia karty</h1>
+    </div>
+
+    {% block messages %}
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endblock %}
+
+    <p>Czy na pewno chcesz usunąć kartę o nr. numerze: <strong>{{ karta.nr }}</strong>?</p>
+
+    <form method="post" action="{% url 'usun_karte' pk=karta.pk %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Tak, usuń</button>
+        <a href="{% url 'lista_kart' %}" class="btn btn-secondary">Anuluj</a>
+    </form>
+{% endblock %}
